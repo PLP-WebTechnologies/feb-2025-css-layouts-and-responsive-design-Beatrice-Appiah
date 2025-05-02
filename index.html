@@ -4,25 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Layout</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    
+    <header>
+        <h1>My Responsive Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <section class="hero">Welcome to the Sparkle Page</section>
-        <section class="grid-container">
-            <div class="box">Box 1</div>
-            <div class="box">Box 2</div>
-            <div class="box">Box 3</div>
+        <section class="content-section">
+            <h2>Section One</h2>
+            <p>This is the content for section one. It will be part of the flexible layout.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Section Two</h2>
+            <p>This is the content for section two. We are using Flexbox to arrange these sections.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Section Three</h2>
+            <p>This is the content for section three. The layout will adapt to different screen sizes.</p>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Responsive Layout</p>
+    </footer>
 </body>
 </html>
