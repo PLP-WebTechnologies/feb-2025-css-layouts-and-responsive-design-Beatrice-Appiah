@@ -1,60 +1,111 @@
-/* Reset styles */
+/* Basic Reset and Body Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Navigation Bar (Flexbox) */
-nav {
-    background: #333;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 60px; /* Add padding to prevent fixed header from covering content */
 }
 
-nav ul {
+/* Header Styling */
+header {
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5em;
+}
+
+/* Navigation Bar Styling */
+nav ul {
     list-style: none;
-    gap: 20px;
+    display: flex; /* Arrange nav items in a row */
+}
+
+nav ul li {
+    margin-left: 20px;
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
 
-/* Main content */
-.hero {
-    background: #007bff;
-    color: white;
-    text-align: center;
-    padding: 50px;
-    font-size: 1.5rem;
+nav ul li a:hover {
+    color: #007bff;
 }
 
-/* Grid Layout */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+/* Main Content Styling using Flexbox */
+main {
     padding: 20px;
+    display: flex; /* Make main a flex container */
+    flex-direction: column; /* Stack sections by default on small screens */
+    gap: 20px; /* Add space between sections */
 }
 
-.box {
-    background: #f4f4f4;
+.content-section {
+    background-color: #fff;
     padding: 20px;
-    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobile View */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+.content-section h2 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablet View ( pantallas entre 601px y 992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+    main {
+        flex-direction: row; /* Arrange sections in a row */
+        flex-wrap: wrap; /* Allow sections to wrap to the next line */
+        justify-content: space-around; /* Distribute space around items */
     }
 
-    .grid-container {
-        grid-template-columns: 1fr;
+    .content-section {
+        flex-basis: 45%; /* Set a base width for sections */
+    }
+}
+
+/* Desktop View (pantallas de 993px en adelante) */
+@media (min-width: 993px) {
+    main {
+        flex-direction: row; /* Arrange sections in a row */
+        justify-content: space-between; /* Distribute space between items */
+    }
+
+    .content-section {
+        flex-basis: 30%; /* Set a base width for sections */
+    }
+
+    nav ul li {
+        margin-left: 30px; /* Increase space between desktop nav items */
     }
 }
